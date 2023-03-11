@@ -1,4 +1,4 @@
-import './Login.css'
+import './SignUp.css'
 import { Link, useHistory } from 'react-router-dom';
 
 const SignUp = () => {

@@ -25,6 +25,8 @@ body {
     padding-bottom: 20px;
     border-radius: 8px;
     background-color: white;
+    align-self: start;
+    margin-top: 20px;
 }
 
 .Auth-form-content {
