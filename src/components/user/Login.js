@@ -1,40 +1,49 @@
-import { Container, Col, Row } from 'react-bootstrap';
-import barcode from '../../assets/barcode.png';
-import logo from '../../assets/logo.jpeg'
-import './Login.css';
-
+import React, { useState } from "react"
+import { Link, useHistory } from "react-router-dom"
+import './Login.css'
+    
 const Login = () => {
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/home')
+    }
+
     return (
-        <div id='container'>
-            <Container>
-                <Row>
-                    <header>Shelfcontrol</header>
-                </Row>
-
-
-
-                <Row>
-                    <Col lg={4}>
-                        <img id='logo' src={logo}></img>
-                    </Col>
-                    <Col lg={8}>
-
-                        <form>
-                            <input type="text" placeholder='Username' ></input>
-                            <input type="password" placeholder='Password' ></input>
-                            <button type='submit'>Submit</button>
-                            <p>Do you have Shelfcontrol?</p>
-                            <img id='barcode' src={barcode}></img>
-                        </form>
-                    </Col>
-                </Row>
-
-            </Container>
-
+        <div className="Auth-form-container">
+            <form className="Auth-form">
+                <div className="Auth-form-content">
+                    <h3 className="Auth-form-title">Login</h3>
+                    
+                    <div className="form-group mt-3">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            className="form-control mt-1"
+                            placeholder="Email Address"
+                        />
+                    </div>
+                    <div className="form-group mt-3">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            className="form-control mt-1"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div className="d-grid gap-2 mt-3">
+                        <button onClick={handleClick } type="submit" className="btn btn-primary">
+                            Log In
+                        </button>
+                    </div>
+                    <p className="text-center mt-2">
+                        Don't have an account? <Link to='/sign-up'><a href="#">Sign Up</a></Link>
+                    </p>
+                </div>
+            </form>
         </div>
-
-
-    );
+    )
 }
-
+ 
 export default Login;
+
