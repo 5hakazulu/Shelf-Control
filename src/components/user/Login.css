@@ -9,7 +9,7 @@ body {
     justify-self: center;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     width: 80%;
     margin: 30px 10px;
     height: 100vh;
@@ -39,18 +39,18 @@ body {
     font-weight: 800;
 }
 
-label {
+.Auth-form-content label {
     font-size: 14px;
     font-weight: 600;
     color: rgb(34, 34, 34);
 }
 
-button {
+.Auth-form-content button {
    background-color: #C7906B !important;
    border-color: #C7906B !important;
 }
 
-a {
+.Auth-form-content a {
     color: #6DA4B0 !important;
 }
 
