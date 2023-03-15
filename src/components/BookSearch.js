@@ -3,7 +3,9 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import './BookSearch.css';
 
 const BookSearch = () => {
-    const [books, setBooks] = useState([])
+    const [books, setBooks] = useState([]);
+
+    //get books from search string
     const searchString = 'It ends with us';
     const getBook = async () => {
         await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchString)}}`)
@@ -16,7 +18,8 @@ const BookSearch = () => {
         getBook()
     }, [])
 
-    // console.log(books)
+
+    //save selected book to unread list
     const saveUnread = async (event) => {
         event.preventDefault();
         const bookId = event.target.attributes[1].value;
@@ -27,6 +30,7 @@ const BookSearch = () => {
         //save info to the unread database 
     }
 
+    //save selected book to read list
     const saveRead = async (event) => {
         const bookId = event.target.attributes[1].value;
         await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
