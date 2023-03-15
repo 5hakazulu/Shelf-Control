@@ -43,10 +43,16 @@ html {
     grid-column: 1/4;
 }
 
-.book button{
-    width: 30px;
-    height: 30px;
-    justify-self: end;
+.book-dropdown {
     grid-row: 1/2;
     grid-column: 3/4;
+    justify-self: end;
+} 
+
+#dropdown-basic {
+   background-color: #C7906B;
+   border: none;
+}
+.book a:hover{
+    border-bottom: solid #6DA4B0;
 }
