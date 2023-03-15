@@ -12,7 +12,6 @@ const Login = () => {
                 </Row>
 
 
-
                 <Row>
                     <Col lg={4}>
                         <img id='logo' src={logo}></img>
