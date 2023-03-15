@@ -2,7 +2,7 @@ import { Container, Col, Row, Navbar, Button, Form, Nav, NavDropdown } from 'rea
 import "./navbar.css"
 import logo from '../assets/SHELF_CONTROL_LOGO_LONG.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faBookOpen, faBook, faComment } from '@fortawesome/free-solid-svg-icons';
 
 
 function SControlNavbar() {
@@ -33,11 +33,17 @@ function SControlNavbar() {
                         className="ms-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll
-                    >
-                        <Nav.Link className='nav-link' href="#action1">Read</Nav.Link>
-                        <Nav.Link href="#action2">Unread</Nav.Link>
 
-                        <Nav.Link href="#">Book Club</Nav.Link>
+                    >
+                        <ul>
+                            <li className='button' href="/read">
+
+                            </li>
+                        </ul>
+                        <Nav.Link className='nav-link' href="/read"><FontAwesomeIcon className='mx-2' icon={faBookOpen} />Read</Nav.Link>
+                        <Nav.Link href="/unread"> <FontAwesomeIcon className='mx-2' icon={faBook} />Unread</Nav.Link>
+
+                        <Nav.Link href="/bookclub"> <FontAwesomeIcon className='mx-2' icon={faComment} />Book Club</Nav.Link>
 
                     </Nav>
 

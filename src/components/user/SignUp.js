@@ -6,9 +6,9 @@ const SignUp = () => {
     const handleClick = () => {
         history.push('/login')
     }
-    return (  
-        <div className="Auth-form-container">
-            <form className="Auth-form" onSubmit={handleClick}>
+    return (
+        <div className="Auth-form-container-sign-up">
+            <form className="Auth-form-sign-up" onSubmit={handleClick}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign Up</h3>
 
@@ -44,18 +44,18 @@ const SignUp = () => {
                             placeholder="Password"
                         />
                     </div>
-                    <div className="d-grid gap-2 mt-3">
+                    <div className="d-grid gap-2 mt-4 pt-3">
                         <button type="submit" className="btn btn-primary">
-                            Sign Up 
+                            Sign Up
                         </button>
                     </div>
                     <p className="text-center mt-2">
-                        Already have an account? <Link to='/Login'><a href="#">Login</a></Link>
+                        Already have an account? <Link to='/Login'>Login</Link>
                     </p>
                 </div>
             </form>
         </div>
     );
 }
- 
+
 export default SignUp;
