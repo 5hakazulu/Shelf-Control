@@ -4,7 +4,9 @@ import './Login.css'
 import logo from '../../assets/SHELF_CONTROL_LOGO_LONG.png'
 import cover from '../../assets/Books_Login.jpg'
 const Login = () => {
+
     const history = useHistory();
+
 
     const handleClick = () => {
         history.push('/home')
