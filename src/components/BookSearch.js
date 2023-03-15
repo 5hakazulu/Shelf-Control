@@ -16,7 +16,26 @@ const BookSearch = () => {
         getBook()
     }, [])
 
-    console.log(books)
+    // console.log(books)
+    const saveUnread = async (event) => {
+        event.preventDefault();
+        const bookId = event.target.attributes[1].value;
+        await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
+            .then(response => response.json())
+            .then(data => console.log(data.volumeInfo))
+        
+        //save info to the unread database 
+    }
+
+    const saveRead = async (event) => {
+        const bookId = event.target.attributes[1].value;
+        await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
+            .then(response => response.json())
+            .then(data => console.log(data.volumeInfo))
+
+        //save info to the read database 
+    } 
+
     return ( 
         <div id="books-container">
             {books ? books.map((book, index) =>
@@ -27,8 +46,8 @@ const BookSearch = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Unread</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Read</Dropdown.Item>
+                            <Dropdown.Item href="#/action-1" id={book.id} onClick={(event) => saveUnread(event)}>Unread</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2" id={book.id} onClick={(event) => saveRead(event)}>Read</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} /> : <img src="https://cdn.bookauthority.org/dist/images/book-cover-not-available.6b5a104fa66be4eec4fd16aebd34fe04.png" />}
