@@ -9,7 +9,7 @@ body {
     justify-self: center;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     width: 80%;
     margin: 30px 10px;
     height: 100vh;
