@@ -16,6 +16,7 @@ function SControlNavbar() {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(setSearchString(search));
+        setSearch('')
     }
 
     console.log(search)
@@ -36,7 +37,8 @@ function SControlNavbar() {
                             type="search"
                             placeholder="Find A Book"
                             className="me-2"
-                            aria-label="Search"
+                                aria-label="Search"
+                            value={search}
                             onChange={(event) => setSearch(event.target.value)}
                         />
                         <Button variant="outline-secondary" className='search-btn' >
