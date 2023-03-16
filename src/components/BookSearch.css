@@ -1,0 +1,59 @@
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
+#books-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.book {
+    margin: 10px;
+    width: 300px;
+    padding: 10px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 225px 50px 50px;
+}
+
+.book h1{
+    font-size:large;
+    grid-row: 3/4;
+    grid-column: 1/4;
+    justify-self: center;
+    align-self: end;
+}
+
+.book h2{
+    font-size: medium;
+    grid-row: 4/5;
+    grid-column: 1/4;
+    justify-self: center;
+    align-self: center;
+}
+
+.book img{
+    margin-bottom: 10px;
+    height: 225px;
+    justify-self: center;
+    grid-row: 2/3;
+    grid-column: 1/4;
+}
+
+.book-dropdown {
+    grid-row: 1/2;
+    grid-column: 3/4;
+    justify-self: end;
+} 
+
+#dropdown-basic {
+   background-color: #C7906B;
+   border: none;
+}
+.book a:hover{
+    border-bottom: solid #6DA4B0;
+}

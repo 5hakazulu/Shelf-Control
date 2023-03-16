@@ -1,12 +1,31 @@
 import { Container, Col, Row, Navbar, Button, Form, Nav, NavDropdown } from 'react-bootstrap';
-import "./navbar.css"
-import logo from '../assets/SHELF_CONTROL_LOGO_LONG.png'
+import "./navbar.css";
+import logo from '../assets/SHELF_CONTROL_LOGO_LONG.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faMagnifyingGlass, faBookOpen, faBook, faComment } from '@fortawesome/free-solid-svg-icons';
 
 
+import { useState } from 'react';
+import BookSearch from './BookSearch';
+import { useDispatch } from 'react-redux';
+import { setSearchString } from '../features/keywordSlice';
+
+
+
 function SControlNavbar() {
+    const [search, setSearch] = useState('');
+    const dispatch = useDispatch();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(setSearchString(search));
+        setSearch('')
+    }
+
+    console.log(search)
     return (
+        <>
         <Navbar className='nav-bar'>
             <Container>
                 <Navbar.Brand href="#home">
@@ -17,12 +36,14 @@ function SControlNavbar() {
                 </Navbar.Brand>
                 <Navbar.Collapse id="navbarScroll">
 
-                    <Form className="d-flex search-bar">
+                    <Form className="d-flex search-bar" onSubmit={e => handleSubmit(e)}>
                         <Form.Control
                             type="search"
                             placeholder="Find A Book"
                             className="me-2"
-                            aria-label="Search"
+                                aria-label="Search"
+                            value={search}
+                            onChange={(event) => setSearch(event.target.value)}
                         />
                         <Button variant="outline-secondary" className='search-btn' >
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -36,6 +57,7 @@ function SControlNavbar() {
 
                     >
 
+
                         <Nav.Link className='nav-link' href="/read"><FontAwesomeIcon className='mx-2' icon={faBookOpen} />My Library</Nav.Link>
                         <Nav.Link href="/unread"> <FontAwesomeIcon className='mx-2' icon={faBook} />Want to Read</Nav.Link>
 
@@ -47,8 +69,9 @@ function SControlNavbar() {
 
             </Container>
 
-        </Navbar>
+            </Navbar>
 
+        </>
     )
 
 }

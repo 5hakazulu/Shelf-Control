@@ -1,4 +1,4 @@
-body {}
+
 
 .App {
     background-color: #EBEBEB;
@@ -41,21 +41,22 @@ body {}
     font-weight: 800;
 }
 
-label {
+.Auth-form-content label {
     font-size: 14px;
     font-weight: 600;
     color: rgb(34, 34, 34);
 }
 
-button {
+.Auth-form-content button {
     background-color: #C7906B !important;
     border-color: #C7906B !important;
 }
 
-btn:hover {
-    background-color: #8a644b;
-}
+
 
 a {
+
+.Auth-form-content a {
+
     color: #6DA4B0 !important;
 }
