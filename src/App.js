@@ -1,15 +1,18 @@
 
 import SControlNavbar from './components/navbar';
 import './App.css';
-import Login from './components/user/Login';
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp"
 import "bootstrap/dist/css/bootstrap.min.css"
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from 'react-router-dom'
-import SignUp from './components/user/SignUp';
 
+} from 'react-router-dom'
+
+
+//APP
 function App() {
   return (
 
