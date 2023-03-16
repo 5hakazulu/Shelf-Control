@@ -1,5 +1,8 @@
+
+import SControlNavbar from './components/navbar';
 import './App.css';
-import Login from './components/user/Login';
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp"
 import "bootstrap/dist/css/bootstrap.min.css"
 import {
   BrowserRouter as Router,
@@ -9,8 +12,10 @@ import {
 import SignUp from './components/user/SignUp';
 import BookSearch from './components/BookSearch';
 
+//APP
 function App() {
   return (
+
     <Router>
       <div className="App">
         <Switch>
@@ -26,6 +31,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+
   );
 }
 
