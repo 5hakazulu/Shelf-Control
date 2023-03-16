@@ -1,22 +1,24 @@
 import { useState, useEffect } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useSelector } from "react-redux";
 import './BookSearch.css';
 
 const BookSearch = () => {
     const [books, setBooks] = useState([]);
+    const searchString = useSelector((state) => state.keyword.searchString);
 
     //get books from search string
-    const searchString = 'It ends with us';
     const getBook = async () => {
-        await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchString)}}`)
-            .then(response => response.json())
-            .then(data => setBooks(data.items))
-        
+        if (searchString) {
+            await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchString)}}`)
+                .then(response => response.json())
+                .then(data => setBooks(data.items))
+        }
     }
 
     useEffect(() => {
         getBook()
-    }, [])
+    }, [searchString])
 
 
     //save selected book to unread list

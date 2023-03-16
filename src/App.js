@@ -3,14 +3,13 @@ import SControlNavbar from './components/navbar';
 import './App.css';
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp"
+import BookSearch from './components/BookSearch';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom' 
-import SignUp from './components/user/SignUp';
-import BookSearch from './components/BookSearch';
 
 //APP
 function App() {
@@ -20,7 +19,8 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path='/'>
-            <BookSearch />
+            <SControlNavbar />
+            <BookSearch/>
           </Route>
           <Route path='/login'>
             <Login />
