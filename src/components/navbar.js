@@ -35,13 +35,9 @@ function SControlNavbar() {
                         navbarScroll
 
                     >
-                        <ul>
-                            <li className='button' href="/read">
 
-                            </li>
-                        </ul>
-                        <Nav.Link className='nav-link' href="/read"><FontAwesomeIcon className='mx-2' icon={faBookOpen} />Read</Nav.Link>
-                        <Nav.Link href="/unread"> <FontAwesomeIcon className='mx-2' icon={faBook} />Unread</Nav.Link>
+                        <Nav.Link className='nav-link' href="/read"><FontAwesomeIcon className='mx-2' icon={faBookOpen} />My Library</Nav.Link>
+                        <Nav.Link href="/unread"> <FontAwesomeIcon className='mx-2' icon={faBook} />Want to Read</Nav.Link>
 
                         <Nav.Link href="/bookclub"> <FontAwesomeIcon className='mx-2' icon={faComment} />Book Club</Nav.Link>
 

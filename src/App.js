@@ -25,6 +25,7 @@ function App() {
           <Route path='/read'>
             <SControlNavbar />
 
+
           </Route>
         </Switch>
       </div>
