@@ -50,7 +50,7 @@ function SControlNavbar() {
                         navbarScroll
                     >
                         <Nav.Link className='nav-link' href="#action1">Read</Nav.Link>
-                        <Nav.Link href="#action2">Unread</Nav.Link>
+                            <Nav.Link href="#action2" onClick={() => dispatch(setSearchString(null))} >Unread</Nav.Link>
 
                         <Nav.Link href="#">Book Club</Nav.Link>
 
@@ -60,7 +60,8 @@ function SControlNavbar() {
 
             </Container>
 
-        </Navbar>
+            </Navbar>
+
         </>
     )
 

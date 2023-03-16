@@ -10,6 +10,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom' 
+import Home from './pages/Home';
 
 //APP
 function App() {
@@ -19,8 +20,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path='/'>
-            <SControlNavbar />
-            <BookSearch/>
+            <Home />
           </Route>
           <Route path='/login'>
             <Login />
