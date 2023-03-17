@@ -10,7 +10,7 @@ import {
   Switch,
   Route,
 
-} from 'react-router-dom' 
+} from 'react-router-dom'
 import Home from './pages/Home';
 
 
@@ -21,20 +21,17 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+
           <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/login'>
             <Login />
+          </Route>
+          <Route path='/home'>
+            <Home />
           </Route>
           <Route path='/sign-up'>
             <SignUp />
           </Route>
-          <Route path='/read'>
-            <SControlNavbar />
 
-
-          </Route>
         </Switch>
       </div>
     </Router>

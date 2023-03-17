@@ -5,6 +5,8 @@
     height: 100px;
     left: 0px;
     top: 0px;
+    position: fixed;
+    top: 0%;
 }
 
 .nav-bar-logo {
