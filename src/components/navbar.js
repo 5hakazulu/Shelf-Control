@@ -26,48 +26,48 @@ function SControlNavbar() {
     console.log(search)
     return (
         <>
-        <Navbar className='nav-bar'>
-            <Container>
-                <Navbar.Brand href="#home">
-                    <img src={logo}
-                        className="d-inline-block align-top nav-bar-logo"
-                        alt="Shelf Control Logo"
-                    />
-                </Navbar.Brand>
-                <Navbar.Collapse id="navbarScroll">
-
-                    <Form className="d-flex search-bar" onSubmit={e => handleSubmit(e)}>
-                        <Form.Control
-                            type="search"
-                            placeholder="Find A Book"
-                            className="me-2"
-                                aria-label="Search"
-                            value={search}
-                            onChange={(event) => setSearch(event.target.value)}
+            <Navbar className='nav-bar'>
+                <Container>
+                    <Navbar.Brand href="#home">
+                        <img src={logo}
+                            className="d-inline-block align-top nav-bar-logo"
+                            alt="Shelf Control Logo"
                         />
-                        <Button variant="outline-secondary" className='search-btn' >
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </Button>
-                    </Form>
+                    </Navbar.Brand>
+                    <Navbar.Collapse id="navbarScroll">
 
-                    <Nav
-                        className="ms-auto my-2 my-lg-0"
-                        style={{ maxHeight: '100px' }}
-                        navbarScroll
+                        <Form className="d-flex search-bar" onSubmit={e => handleSubmit(e)}>
+                            <Form.Control
+                                type="search"
+                                placeholder="Find A Book"
+                                className="me-2"
+                                aria-label="Search"
+                                value={search}
+                                onChange={(event) => setSearch(event.target.value)}
+                            />
+                            <Button variant="outline-secondary" className='search-btn' >
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </Button>
+                        </Form>
 
-                    >
+                        <Nav
+                            className="ms-auto my-2 my-lg-0"
+                            style={{ maxHeight: '100px' }}
+                            navbarScroll
+
+                        >
 
 
-                        <Nav.Link className='nav-link' href="/read"><FontAwesomeIcon className='mx-2' icon={faBookOpen} />My Library</Nav.Link>
-                        <Nav.Link href="/unread"> <FontAwesomeIcon className='mx-2' icon={faBook} />Want to Read</Nav.Link>
+                            <Nav.Link className='nav-link border border-2 mx-2 rounded border-secondary' href="/home"><FontAwesomeIcon className='mx-2' icon={faBookOpen} />My Library</Nav.Link>
 
-                        <Nav.Link href="/bookclub"> <FontAwesomeIcon className='mx-2' icon={faComment} />Book Club</Nav.Link>
 
-                    </Nav>
+                            <Nav.Link className='nav-link border mx-2 border-2 rounded border-secondary' href="/bookclub"> <FontAwesomeIcon className='mx-2' icon={faComment} />Book Club</Nav.Link>
 
-                </Navbar.Collapse>
+                        </Nav>
 
-            </Container>
+                    </Navbar.Collapse>
+
+                </Container>
 
             </Navbar>
 

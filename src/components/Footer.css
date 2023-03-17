@@ -1,0 +1,11 @@
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: #ebebeb;
+
+}
+
+.main-footer p {
+    margin-top: 10px;
+}
