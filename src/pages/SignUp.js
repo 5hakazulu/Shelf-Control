@@ -32,8 +32,8 @@ const SignUp = () => {
     history.push("/login");
   };
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form" onSubmit={handleClick}>
+    <div className="Auth-form-container-sign-up">
+      <form className="Auth-form-sign-up" onSubmit={handleClick}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
 

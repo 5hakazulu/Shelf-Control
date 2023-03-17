@@ -1,12 +1,10 @@
-
-
 .App {
     background-color: #EBEBEB;
 
 }
 
 .Auth-form-container-sign-up {
-    background-image: url("../../assets/Books_Login.jpg");
+    background-image: url("../assets/Books_Login.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -41,21 +39,21 @@
     font-weight: 800;
 }
 
-.Auth-form-content label {
+label {
     font-size: 14px;
     font-weight: 600;
     color: rgb(34, 34, 34);
 }
 
-.Auth-form-content button {
+button {
     background-color: #C7906B !important;
     border-color: #C7906B !important;
 }
 
+btn:hover {
+    background-color: #8a644b;
+}
 
-
-
-.Auth-form-content a {
-
+a {
     color: #6DA4B0 !important;
 }
