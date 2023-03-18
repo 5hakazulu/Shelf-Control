@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, useHistory} from "react-router-dom";
-import "./Login.css";
+import { Link, useHistory } from "react-router-dom";
+// import "./Login.css";
 import logo from "../assets/SHELF_CONTROL_LOGO_LONG.png";
 import cover from "../assets/Books_Login.jpg";
 import { AuthContext } from "../context/authContext";
@@ -12,7 +12,7 @@ import { useContext } from "react";
 
 
 const Login = () => {
-    
+
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -37,7 +37,7 @@ const Login = () => {
     }
   };
 
-  
+
 
 
   return (
@@ -48,10 +48,10 @@ const Login = () => {
       <div id="main-container">
         <img id="logo" alt="logo" src={logo}></img>
       </div>
-      <div className="Auth-form-container">
-        <form className="Auth-form">
-          <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Login</h3>
+      <div className="Auth-form-container-login">
+        <form className="Auth-form-login">
+          <div className="Auth-form-content-login">
+            <h3 className="Auth-form-title-login">Login</h3>
 
             <div className="form-group mt-3">
               <label>Email</label>
