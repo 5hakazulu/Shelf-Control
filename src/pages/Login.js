@@ -31,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(inputs);
-      history.push("/");
+      history.push("/home");
     } catch (err) {
       setError(err.response.data);
     }
