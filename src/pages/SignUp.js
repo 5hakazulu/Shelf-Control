@@ -12,6 +12,8 @@ const SignUp = () => {
   });
 
   const [err, setError] = useState(null);
+  const history = useHistory();
+
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -22,20 +24,20 @@ const SignUp = () => {
     try {
       const res = await axios.post("/api/auth/sign-up", inputs);
       console.log(res);
+      history.push("/");
     } catch (err) {
       setError(err.response.data);
     }
   };
 
-  const history = useHistory();
-  const handleClick = () => {
-    history.push("/login");
-  };
+
   return (
     <div className="Auth-form-container-sign-up">
-      <form className="Auth-form-sign-up" onSubmit={handleClick}>
-        <div className="Auth-form-content-sign-up">
-          <h3 className="Auth-form-title-sign-up">Sign Up</h3>
+
+      <form className="Auth-form-sign-up">
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Sign Up</h3>
+
 
           <div className="form-group mt-3">
             <label>Name</label>

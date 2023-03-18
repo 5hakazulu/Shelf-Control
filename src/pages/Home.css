@@ -4,6 +4,13 @@
     width: auto;
     height: 89vh;
     margin: 0;
-
-
+    
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+    
+}
+.homeBody::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

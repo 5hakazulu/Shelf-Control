@@ -1,6 +1,7 @@
 import SControlNavbar from "../components/navbar";
 import BookSearch from "../components/BookSearch";
 import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 import "./Home.css";
 import Footer from "../components/Footer";
 const Home = () => {
@@ -9,8 +10,8 @@ const Home = () => {
     return (
         <>
             <SControlNavbar />
-            {searchString ? <BookSearch /> : null}
             <div className="homeBody">
+            {searchString ? <BookSearch /> : null}
 
             </div>
             <Footer />
