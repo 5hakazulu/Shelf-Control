@@ -1,4 +1,4 @@
-import "./SignUp.css";
+// import "./SignUp.css";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
@@ -33,9 +33,11 @@ const SignUp = () => {
 
   return (
     <div className="Auth-form-container-sign-up">
+
       <form className="Auth-form-sign-up">
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
+
 
           <div className="form-group mt-3">
             <label>Name</label>
@@ -52,7 +54,7 @@ const SignUp = () => {
             <input
               type="email"
               className="form-control mt-1"
-              placeholder="Email Address"
+              placeholder="e.g jane_doe@email.com"
               name="email"
               onChange={handleChange}
             />

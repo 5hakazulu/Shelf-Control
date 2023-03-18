@@ -1,3 +1,180 @@
 .App {
   text-align: center;
+  background-color: #EBEBEB;
+}
+
+body {
+  overflow: hidden;
+}
+
+a {
+  color: #6DA4B0 !important;
+}
+
+/* sign up styling  */
+
+.Auth-form-container-sign-up {
+  background-image: url("./assets/Books_Login.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+
+}
+
+.Auth-form-sign-up {
+  width: 420px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  margin-top: 2%;
+
+}
+
+.Auth-form-content-sign-up {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title-sign-up {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
+}
+
+.Auth-form-container-sign-up label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+
+.Auth-form-container-sign-up button {
+  background-color: #C7906B !important;
+  border-color: #C7906B !important;
+}
+
+.Auth-form-container-sign-up btn:hover {
+  background-color: #8a644b !important;
+
+}
+
+/* login page styling */
+.Auth-form-container-login {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: 30px 10px;
+  height: 100vh;
+}
+
+.Auth-form-login {
+  width: 420px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  align-self: start;
+  margin-top: 20px;
+}
+
+.Auth-form-content-login {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+#cover-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-box-shadow: 12px 0px 20px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 0px 20px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 0px 20px -10px rgba(0, 0, 0, 0.75);
+}
+
+.Auth-form-title-login {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
+}
+
+
+@media screen and (max-width: 1045px) {
+  #container {
+    display: grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: 100%;
+  }
+
+  #main-container {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    justify-self: center;
+    align-self: end;
+    z-index: 10;
+  }
+
+  .Auth-form-container-login {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+
+  #cover-container {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+}
+
+@media screen and (min-width: 1046px) {
+  #container {
+    display: grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: 55% 45%;
+  }
+
+  #main-container {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    justify-self: center;
+    align-self: end;
+  }
+
+  #cover-container {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .Auth-form-container-login {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+}
+
+#logo {
+  width: 70%;
+  object-fit: contain;
+
+}
+
+.Auth-form-login label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+
+.Auth-form-login button {
+  background-color: #C7906B !important;
+  border-color: #C7906B !important;
 }
