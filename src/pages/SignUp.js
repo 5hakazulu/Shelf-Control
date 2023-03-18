@@ -1,4 +1,4 @@
-import "./SignUp.css";
+// import "./SignUp.css";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
@@ -34,8 +34,8 @@ const SignUp = () => {
   return (
     <div className="Auth-form-container-sign-up">
       <form className="Auth-form-sign-up" onSubmit={handleClick}>
-        <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign Up</h3>
+        <div className="Auth-form-content-sign-up">
+          <h3 className="Auth-form-title-sign-up">Sign Up</h3>
 
           <div className="form-group mt-3">
             <label>Name</label>
@@ -52,7 +52,7 @@ const SignUp = () => {
             <input
               type="email"
               className="form-control mt-1"
-              placeholder="Email Address"
+              placeholder="e.g jane_doe@email.com"
               name="email"
               onChange={handleChange}
             />
@@ -88,7 +88,7 @@ const SignUp = () => {
             {err && <p>{err}</p>}
           </div>
           <p className="text-center mt-2">
-            Already have an account? <Link to="/Login">Login</Link>
+            Already have an account? <Link to="/">Login</Link>
           </p>
         </div>
       </form>
