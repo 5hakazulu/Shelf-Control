@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useSelector } from "react-redux";
-import './BookSearch.css';
+// import './BookSearch.css';
 
 const BookSearch = () => {
     const [books, setBooks] = useState([]);
@@ -28,7 +28,7 @@ const BookSearch = () => {
         await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
             .then(response => response.json())
             .then(data => console.log(data.volumeInfo))
-        
+
         //save info to the unread database 
     }
 
@@ -40,9 +40,9 @@ const BookSearch = () => {
             .then(data => console.log(data.volumeInfo))
 
         //save info to the read database 
-    } 
+    }
 
-    return ( 
+    return (
         <div id="books-container">
             {books ? books.map((book, index) =>
                 <div key={index} className="book">
@@ -62,8 +62,8 @@ const BookSearch = () => {
                 </div>
             ) : null}
         </div>
-        
-     );
+
+    );
 }
- 
+
 export default BookSearch;

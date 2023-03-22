@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
+
 const SignUp = () => {
   const [inputs, setInputs] = useState({
     name: "",
@@ -35,8 +36,8 @@ const SignUp = () => {
     <div className="Auth-form-container-sign-up">
 
       <form className="Auth-form-sign-up">
-        <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign Up</h3>
+        <div className="Auth-form-content-sign-up">
+          <h3 className="Auth-form-title-sign-up">Sign Up</h3>
 
 
           <div className="form-group mt-3">
@@ -94,7 +95,9 @@ const SignUp = () => {
           </p>
         </div>
       </form>
+
     </div>
+
   );
 };
 
