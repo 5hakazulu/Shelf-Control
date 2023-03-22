@@ -184,11 +184,12 @@ a {
 /* saved books styling */
 #saved-books-container {
   margin-bottom: 55px;
-  padding: 50px 0 50px 0;
-  background-color: white;
+  padding: 50px 0 50px 20px;
+  background-color: #ebe9e9;
   min-height: 100%;
 
 }
+
 #saved-books {
     display: flex;
       flex-wrap: wrap;
@@ -197,9 +198,10 @@ a {
 
 .saved-book {
   padding: 20px;
-  margin:10px;
-  border: solid 1px gray;
-  border-radius: 5%;
+  margin: 0 10px 20px 10px;
+  background-color: white;
+  /* border: solid 1px gray;*/
+  border-radius: 5%; 
 }
 .saved-book h1 {
   font-size: large;
@@ -213,3 +215,13 @@ a {
 .saved-book p {
   margin-bottom: 8px;
 }
+.nav-pills {
+  --bs-nav-pills-link-active-bg: #9ab7c6!important;
+
+}
+
+.nav-pills a {
+color: black !important;
+}
+
+

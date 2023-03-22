@@ -52,7 +52,7 @@ const BookSearch = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1" id={book.id} onClick={(event) => saveUnread(event)}>Unread</Dropdown.Item>
+                            <Dropdown.Item href="#/action-1" id={book.id} onClick={(event) => saveUnread(event)}>Want to Read</Dropdown.Item>
                             <Dropdown.Item href="#/action-2" id={book.id} onClick={(event) => saveRead(event)}>Read</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>

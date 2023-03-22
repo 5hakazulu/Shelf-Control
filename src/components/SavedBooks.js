@@ -10,7 +10,7 @@ import Tab from 'react-bootstrap/Tab'; const SavedBooks = () => {
             <Tab.Container id="left-tabs-example" defaultActiveKey="unread">
             <Row>
                     <Col sm={2}>
-                    <Nav className="flex-column">
+                        <Nav variant="pills" className="flex-column">
                         <Nav.Item>
                             <Nav.Link eventKey="unread">Want to Read</Nav.Link>
                         </Nav.Item>
