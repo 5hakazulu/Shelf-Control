@@ -88,7 +88,7 @@ const SignUp = () => {
             >
               Sign Up
             </button>
-            {err && <p>{err}</p>}
+            {err && <p>{err.message}</p>}
           </div>
           <p className="text-center mt-2">
             Already have an account? <Link to="/">Login</Link>
