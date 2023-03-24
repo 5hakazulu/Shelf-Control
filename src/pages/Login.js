@@ -1,26 +1,18 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-// import "./Login.css";
+import "./Login.css";
 import logo from "../assets/SHELF_CONTROL_LOGO_LONG.png";
 import cover from "../assets/Books_Login.jpg";
 import { AuthContext } from "../context/authContext";
 import { useContext } from "react";
 
-
-
-
-
-
 const Login = () => {
-
   const [inputs, setInputs] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   const [err, setError] = useState(null);
-
   const history = useHistory();
-
   const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
@@ -36,9 +28,6 @@ const Login = () => {
       setError(err.response.data);
     }
   };
-
-
-
 
   return (
     <div id="container">
@@ -59,6 +48,8 @@ const Login = () => {
                 type="email"
                 className="form-control mt-1"
                 placeholder="Email Address"
+                name="email"
+                value={inputs.email}
                 onChange={handleChange}
               />
             </div>
@@ -68,6 +59,8 @@ const Login = () => {
                 type="password"
                 className="form-control mt-1"
                 placeholder="Password"
+                name="password"
+                value={inputs.password}
                 onChange={handleChange}
               />
             </div>
@@ -79,7 +72,7 @@ const Login = () => {
               >
                 Log In
               </button>
-              {err && <p>{err}</p>}
+              {err && <p>{err.error || err.message}</p>}
             </div>
             <p className="text-center mt-2">
               Don't have an account? <Link to="/sign-up">Sign Up</Link>
