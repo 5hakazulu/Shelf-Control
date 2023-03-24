@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 // import "./Home.css";
 import Footer from "../components/Footer";
+import SavedBooks from "../components/SavedBooks";
 const Home = () => {
     const searchString = useSelector((state) => state.keyword.searchString);
 
@@ -11,7 +12,9 @@ const Home = () => {
         <>
             <SControlNavbar />
             <div className="homeBody">
-                {searchString ? <BookSearch /> : null}
+
+                {searchString ? <BookSearch /> : <SavedBooks />}
+            
 
             </div>
             <Footer />

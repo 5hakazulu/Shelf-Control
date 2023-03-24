@@ -12,7 +12,9 @@ a {
 }
 
 /* sign up styling  */
-
+#container {
+    background-color: #EBEBEB;
+}
 .Auth-form-container-sign-up {
   background-image: url("./assets/Books_Login.jpg");
   background-size: cover;
@@ -178,6 +180,52 @@ a {
   background-color: #C7906B !important;
   border-color: #C7906B !important;
 }
+
+
+/* saved books styling */
+#saved-books-container {
+  margin-bottom: 55px;
+  padding: 50px 0 50px 20px;
+  background-color: #ebe9e9;
+  min-height: 100%;
+
+}
+
+#saved-books {
+    display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+}
+
+.saved-book {
+  padding: 20px;
+  margin: 0 10px 20px 10px;
+  background-color: white;
+  /* border: solid 1px gray;*/
+  border-radius: 5%; 
+}
+.saved-book h1 {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.saved-book h2 {
+  font-size: large;
+  
+}
+.saved-book p {
+  margin-bottom: 8px;
+}
+.nav-pills {
+  --bs-nav-pills-link-active-bg: #9ab7c6!important;
+
+}
+
+.nav-pills a {
+color: black !important;
+}
+
+
 
 /* Footer styling */
 
@@ -358,3 +406,4 @@ a {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
