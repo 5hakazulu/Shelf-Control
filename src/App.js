@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp"
 import BookSearch from './components/BookSearch';
 import Footer from "./components/Footer";
+import SControlBookClub from './components/BookClub';
+
 
 
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -34,6 +36,11 @@ function App() {
           </Route>
           <Route path='/sign-up'>
             <SignUp />
+            <Footer />
+          </Route>
+          <Route path='/bookClub'>
+            <SControlNavbar />
+            <SControlBookClub />
             <Footer />
           </Route>
 

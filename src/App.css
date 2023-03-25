@@ -195,6 +195,7 @@ a {
 
 /* Navbar styling */
 
+
 @media screen and (max-width: 1200px) {
   .nav-bar {
     background-color: #ebebeb;
@@ -281,7 +282,7 @@ a {
 
 }
 
-/* BOOKSERACH SECTION  */
+/* BOOKSEARCH SECTION  */
 
 #books-container {
   display: flex;
@@ -357,4 +358,102 @@ a {
   display: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Book Club Section */
+
+.ce-message-bubble {
+  background-color: #6DA4B0 !important;
+}
+
+.ce-primary-button {
+  background-color: #C7906B !important;
+  height: 40px !important;
+
+
+}
+
+.anticon-menu,
+.anticon-setting,
+.anticon-close {
+  color: #6DA4B0 !important;
+  background-color: #d6d6d6;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.ce-active-chat-card {
+  background-color: #ebebeb !important;
+}
+
+.ce-chat-form-container {
+
+  background-color: #6DA4B0 !important;
+  margin-left: 0 !important;
+  text-align: center;
+  color: #373c40;
+}
+
+.ce-settings {
+  color: #373c40;
+}
+
+.ce-chat-title {
+  -webkit-box-shadow: 0px 21px 26px -29px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 21px 26px -29px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 21px 26px -29px rgba(0, 0, 0, 0.75);
+}
+
+.ce-chat-title-text,
+.ce-chat-subtitle-text {
+  color: #C7906B;
+}
+
+.ce-chat-list-mobile-option,
+.ce-chat-settings-mobile-option {
+  color: #373c40 !important;
+}
+
+.ce-chat-settings-mobile-option>div>div>div {
+  color: #373c40 !important;
+}
+
+#ce-send-message-button {
+  color: #6DA4B0 !important;
+  background-color: #6DA4B0 !important;
+}
+
+.ce-settings {
+  background-color: #d6d6d6 !important;
+}
+
+.ce-chats-container {
+  background-color: #d6d6d6 !important;
+}
+
+.ce-chat-settings-container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+}
+
+.ce-person-title-container {
+  margin-top: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#ce-options-drop-down {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+/* THIS GETS RID OF THE SCROLL BARS */
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
 }
