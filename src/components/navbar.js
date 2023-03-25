@@ -1,5 +1,5 @@
 import { Container, Row, Col, Navbar, Button, Form, Nav } from 'react-bootstrap';
-import "./navbar.css";
+// import "./navbar.css";
 import logo from '../assets/SHELF_CONTROL_LOGO_LONG.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -66,7 +66,7 @@ function SControlNavbar() {
                             <Nav.Link style={{ minWidth: '150px', maxHeight: '50px' }} className='nav-link  border border-2 mx-2 rounded border-secondary my-2 mx-2' href="/home"><FontAwesomeIcon className='mx-2' icon={faBookOpen} />My Library</Nav.Link>
 
 
-                            <Nav.Link style={{ minWidth: '150px', maxHeight: '50px' }} className='nav-link border mx-2 border-2 rounded border-secondary my-2 mx-2' href="/bookclub"> <FontAwesomeIcon className='mx-2' icon={faComment} />Book Club</Nav.Link>
+                            <Nav.Link style={{ minWidth: '150px', maxHeight: '50px' }} className='nav-link border mx-2 border-2 rounded border-secondary my-2 mx-2' href="/bookClub"> <FontAwesomeIcon className='mx-2' icon={faComment} />Book Club</Nav.Link>
 
                         </Nav>
 
