@@ -185,16 +185,21 @@ a {
 /* saved books styling */
 #saved-books-container {
   margin-bottom: 55px;
-  padding: 50px 0 50px 20px;
-  background-color: #ebe9e9;
+  /* padding: 50px 0 50px 20px; */
   min-height: 100%;
 
+}
+#saved-books-container .col-sm-2 {
+  background-color: #EBEBEB;
+  padding: 50px 10px 0 20px;
+  height: 100vh;
 }
 
 #saved-books {
     display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 50px;
 }
 
 .saved-book {
@@ -224,7 +229,6 @@ a {
 .nav-pills a {
 color: black !important;
 }
-
 
 
 /* Footer styling */
@@ -329,7 +333,7 @@ color: black !important;
 
 }
 
-/* BOOKSERACH SECTION  */
+/* BOOKSEARCH SECTION  */
 
 #books-container {
   display: flex;
@@ -347,7 +351,7 @@ color: black !important;
   background-color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 225px 50px 50px 50px;
+  grid-template-rows: 225px 60px 50px 50px;
 }
 
 .book h1 {
@@ -355,7 +359,8 @@ color: black !important;
   grid-row: 2/3;
   grid-column: 1/4;
   justify-self: center;
-  align-self: end;
+  align-self: start;
+  padding-top: 10px;
 }
 
 .book h2 {
