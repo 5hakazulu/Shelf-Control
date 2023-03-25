@@ -31,50 +31,19 @@ import Tab from 'react-bootstrap/Tab'; const SavedBooks = () => {
                                     <p>Avg. rating: 5</p>
                                     <a target='_blank' href="https://play.google.com/store/books/details?id=vH3LDwAAQBAJ&rdid=book-vH3LDwAAQBAJ&rdot=1&source=gbs_api">Buy</a>
                                 </div> 
-                                    <div className="saved-book">
-                                    <img src="http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
-                                    <h1>The Invisible Life of Addie LaRue</h1>
-                                    <h2>V. E. Schwab</h2>
-                                    <p>{moment('2020-10-06').format('YYYY')}</p>
-                                    <p>Avg. rating: 5</p>
-                                    <a target='_blank' href="https://play.google.com/store/books/details?id=vH3LDwAAQBAJ&rdid=book-vH3LDwAAQBAJ&rdot=1&source=gbs_api">Buy</a>
-                                </div> 
-                                    <div className="saved-book">
-                                    <img src="http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
-                                    <h1>The Invisible Life of Addie LaRue</h1>
-                                    <h2>V. E. Schwab</h2>
-                                    <p>{moment('2020-10-06').format('YYYY')}</p>
-                                    <p>Avg. rating: 5</p>
-                                    <a target='_blank' href="https://play.google.com/store/books/details?id=vH3LDwAAQBAJ&rdid=book-vH3LDwAAQBAJ&rdot=1&source=gbs_api">Buy</a>
-                                </div> 
-
-                                    <div className="saved-book">
-                                    <img src="http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
-                                    <h1>The Invisible Life of Addie LaRue</h1>
-                                    <h2>V. E. Schwab</h2>
-                                    <p>{moment('2020-10-06').format('YYYY')}</p>
-                                    <p>Avg. rating: 5</p>
-                                    <a target='_blank' href="https://play.google.com/store/books/details?id=vH3LDwAAQBAJ&rdid=book-vH3LDwAAQBAJ&rdot=1&source=gbs_api">Buy</a>
-                                </div> 
-                                    <div className="saved-book">
-                                    <img src="http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
-                                    <h1>The Invisible Life of Addie LaRue</h1>
-                                    <h2>V. E. Schwab</h2>
-                                    <p>{moment('2020-10-06').format('YYYY')}</p>
-                                    <p>Avg. rating: 5</p>
-                                    <a target='_blank' href="https://play.google.com/store/books/details?id=vH3LDwAAQBAJ&rdid=book-vH3LDwAAQBAJ&rdot=1&source=gbs_api">Buy</a>
-                                </div> 
                             </div>  
                         </Tab.Pane>
-                        <Tab.Pane eventKey="read" id="read">
-                                <div>
-                                    <img src="http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
-                                    <h1>testing</h1>
-                                    <h2>V. E. Schwab</h2>
-                                    <p>{moment('2020-10-06').format('YYYY')}</p>
-                                    <p>Avg. rating: 5</p>
-                                    <a target='_blank' href="https://play.google.com/store/books/details?id=vH3LDwAAQBAJ&rdid=book-vH3LDwAAQBAJ&rdot=1&source=gbs_api">Buy</a>
-                                </div> 
+                            <Tab.Pane eventKey="read" id="read">
+                                <div id="saved-books">
+                                    <div className="saved-book">
+                                        <img src="http://books.google.com/books/content?id=vH3LDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
+                                        <h1>testing</h1>
+                                        <h2>V. E. Schwab</h2>
+                                        <p>{moment('2020-10-06').format('YYYY')}</p>
+                                        <p>Avg. rating: 5</p>
+                                        <a target='_blank' href="https://play.google.com/store/books/details?id=vH3LDwAAQBAJ&rdid=book-vH3LDwAAQBAJ&rdot=1&source=gbs_api">Buy</a>
+                                    </div> 
+                                </div>
                         </Tab.Pane>
                     </Tab.Content>
                 </Col>
