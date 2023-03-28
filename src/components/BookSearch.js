@@ -15,7 +15,7 @@ const BookSearch = () => {
                 .then(data => setBooks(data.items))
         }
     }
-
+console.log(books)
     useEffect(() => {
         getBook()
     }, [searchString])
@@ -57,8 +57,9 @@ const BookSearch = () => {
                         </Dropdown.Menu>
                     </Dropdown>
                     {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} /> : <img src="https://cdn.bookauthority.org/dist/images/book-cover-not-available.6b5a104fa66be4eec4fd16aebd34fe04.png" />}
-                    <h1><a>{book.volumeInfo.title}</a></h1>
+                    <h1>{book.volumeInfo.title}</h1>
                     <h2>by {book.volumeInfo.authors[0]}</h2>
+                    {/* <p>{book.volumeInfo.description}</p> */}
                 </div>
             ) : null}
         </div>
