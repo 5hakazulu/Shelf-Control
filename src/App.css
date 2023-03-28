@@ -13,8 +13,9 @@ a {
 
 /* sign up styling  */
 #container {
-    background-color: #EBEBEB;
+  background-color: #EBEBEB;
 }
+
 .Auth-form-container-sign-up {
   background-image: url("./assets/Books_Login.jpg");
   background-size: cover;
@@ -189,45 +190,51 @@ a {
   min-height: 100%;
 
 }
+
 #saved-books-container .col-sm-2 {
   background-color: #EBEBEB;
   padding: 50px 10px 0 20px;
   height: 100vh;
+  position: fixed;
 }
 
 #saved-books {
-    display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .saved-book {
   padding: 20px;
   margin: 0 10px 20px 10px;
   background-color: white;
-  border-radius: 5%; 
+  border-radius: 5%;
   width: 300px;
 }
+
 .saved-book h1 {
   font-size: large;
   font-weight: bold;
   margin-top: 8px;
 }
+
 .saved-book h2 {
   font-size: large;
-  
+
 }
+
 .saved-book p {
   margin-bottom: 8px;
 }
+
 .nav-pills {
-  --bs-nav-pills-link-active-bg: #9ab7c6!important;
+  --bs-nav-pills-link-active-bg: #9ab7c6 !important;
 
 }
 
 .nav-pills a {
-color: black !important;
+  color: black !important;
 }
 
 
@@ -246,6 +253,10 @@ color: black !important;
 }
 
 /* Navbar styling */
+.nav-bar {
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.694);
+  z-index: 1001;
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -260,6 +271,7 @@ color: black !important;
     top: 0%;
     padding-left: 0%;
     padding-right: 0%;
+
   }
 }
 
@@ -275,6 +287,7 @@ color: black !important;
     top: 0%;
     padding-left: 0%;
     padding-right: 0%;
+
   }
 }
 
