@@ -14,6 +14,12 @@ const SignUp = () => {
     password: "",
   });
 
+  // const headers = {
+  //   'PRIVATE-KEY': '{{00acdbba-5deb-4b88-a589-b427dd87a623}}',
+
+  // };
+
+
   const [err, setError] = useState(null);
   const history = useHistory();
   const { login } = useContext(AuthContext);
@@ -24,11 +30,22 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // var data = {
+    //   "username": inputs.username,
+    //   "secret": inputs.password,
+
+    // }
+    // console.log(data)
     try {
+
+      
+      // const chat = await axios.post('https://api.chatengine.io/users/', data, { headers });
+      // console.log(chat);
       const response = await axios.post("http://localhost:8800/api/auth/sign-up", inputs);
       const { token } = response.data;
       login(token);
       history.push("/home");
+
     } catch (err) {
       setError(err.response.data);
     }
