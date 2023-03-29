@@ -5,6 +5,7 @@ import logo from "../assets/SHELF_CONTROL_LOGO_LONG.png";
 import cover from "../assets/Books_Login.jpg";
 import { AuthContext } from "../context/authContext";
 import { useContext } from "react";
+import axios from "axios";
 
 const Login = () => {
   const [inputs, setInputs] = useState({
@@ -22,9 +23,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(inputs);
+      // console.log(e)
+      // console.log(e.target.email)
+      // const response = await axios.post("/api/auth/login", {email:e.target.email.value, password:e.target.password.value})
+      // console.log(e)
+      // console.log(response)
+      await login({email:e.target.email.value, password:e.target.password.value})
+      // const { token } = response.data;
+      // login(token);
       history.push("/home");
     } catch (err) {
+      console.log(err)
       setError(err.response.data);
     }
   };
@@ -38,11 +47,11 @@ const Login = () => {
         <img id="logo" alt="logo" src={logo}></img>
       </div>
       <div className="Auth-form-container-login">
-        <form className="Auth-form-login">
+        <form className="Auth-form-login" onSubmit={handleSubmit}>
           <div className="Auth-form-content-login">
             <h3 className="Auth-form-title-login">Login</h3>
 
-            <div className="form-group mt-3">
+            <div className="form-group mt-3" name="email" >
               <label>Email</label>
               <input
                 type="email"
@@ -53,7 +62,7 @@ const Login = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group mt-3">
+            <div className="form-group mt-3" name="password" >
               <label>Password</label>
               <input
                 type="password"
@@ -66,7 +75,7 @@ const Login = () => {
             </div>
             <div className="d-grid gap-2 mt-3">
               <button
-                onClick={handleSubmit}
+                // onClick={handleSubmit}
                 type="submit"
                 className="btn btn-primary"
               >
