@@ -21,11 +21,13 @@ const BookSearch = ({ userId }) => {
         .then((data) => setBooks(data.items))
         .catch((error) => console.log("Error fetching books: ", error));
     }
+
   };
 
   useEffect(() => {
     getBook();
   }, [searchString]);
+
 
   const saveUnread = async (event, book) => {
     event.preventDefault();
@@ -110,8 +112,10 @@ const BookSearch = ({ userId }) => {
                         </Dropdown.Menu>
                     </Dropdown>
                     {book.volumeInfo.imageLinks ? <img src={book.volumeInfo.imageLinks.thumbnail} /> : <img src="https://cdn.bookauthority.org/dist/images/book-cover-not-available.6b5a104fa66be4eec4fd16aebd34fe04.png" />}
+
                     <h1><a>{book.volumeInfo.title}</a></h1>
                     <h2>by {book.volumeInfo.authors}</h2>
+
                 </div>
             ) : null}
         </div>

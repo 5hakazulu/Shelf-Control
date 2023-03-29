@@ -13,8 +13,9 @@ a {
 
 /* sign up styling  */
 #container {
-    background-color: #EBEBEB;
+  background-color: #EBEBEB;
 }
+
 .Auth-form-container-sign-up {
   background-image: url("./assets/Books_Login.jpg");
   background-size: cover;
@@ -185,46 +186,56 @@ a {
 /* saved books styling */
 #saved-books-container {
   margin-bottom: 55px;
-  padding: 50px 0 50px 20px;
-  background-color: #ebe9e9;
+  /* padding: 50px 0 50px 20px; */
   min-height: 100%;
 
 }
 
+#saved-books-container .col-sm-2 {
+  background-color: #EBEBEB;
+  padding: 50px 10px 0 20px;
+  height: 100vh;
+  position: fixed;
+}
+
 #saved-books {
-    display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .saved-book {
   padding: 20px;
   margin: 0 10px 20px 10px;
   background-color: white;
-  /* border: solid 1px gray;*/
-  border-radius: 5%; 
+  border-radius: 5%;
+  width: 300px;
 }
+
 .saved-book h1 {
   font-size: large;
   font-weight: bold;
   margin-top: 8px;
 }
+
 .saved-book h2 {
   font-size: large;
-  
+
 }
+
 .saved-book p {
   margin-bottom: 8px;
 }
+
 .nav-pills {
-  --bs-nav-pills-link-active-bg: #9ab7c6!important;
+  --bs-nav-pills-link-active-bg: #9ab7c6 !important;
 
 }
 
 .nav-pills a {
-color: black !important;
+  color: black !important;
 }
-
 
 
 /* Footer styling */
@@ -242,6 +253,11 @@ color: black !important;
 }
 
 /* Navbar styling */
+.nav-bar {
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.694);
+  z-index: 1001;
+}
+
 
 @media screen and (max-width: 1200px) {
   .nav-bar {
@@ -255,6 +271,7 @@ color: black !important;
     top: 0%;
     padding-left: 0%;
     padding-right: 0%;
+
   }
 }
 
@@ -270,6 +287,7 @@ color: black !important;
     top: 0%;
     padding-left: 0%;
     padding-right: 0%;
+
   }
 }
 
@@ -329,7 +347,7 @@ color: black !important;
 
 }
 
-/* BOOKSERACH SECTION  */
+/* BOOKSEARCH SECTION  */
 
 #books-container {
   display: flex;
@@ -343,23 +361,25 @@ color: black !important;
   margin: 10px;
   width: 300px;
   padding: 10px;
+  border-radius: 5%;
   background-color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50px 225px 50px 50px;
+  grid-template-rows: 225px 60px 50px 50px;
 }
 
 .book h1 {
   font-size: large;
-  grid-row: 3/4;
+  grid-row: 2/3;
   grid-column: 1/4;
   justify-self: center;
-  align-self: end;
+  align-self: start;
+  padding-top: 10px;
 }
 
 .book h2 {
   font-size: medium;
-  grid-row: 4/5;
+  grid-row: 3/4;
   grid-column: 1/4;
   justify-self: center;
   align-self: center;
@@ -369,14 +389,14 @@ color: black !important;
   margin-bottom: 10px;
   height: 225px;
   justify-self: center;
-  grid-row: 2/3;
+  grid-row: 1/2;
   grid-column: 1/4;
 }
 
 .book-dropdown {
-  grid-row: 1/2;
-  grid-column: 3/4;
-  justify-self: end;
+  grid-row: 4/5;
+  grid-column: 1/4;
+  justify-self: center;
 }
 
 #dropdown-basic {
@@ -407,3 +427,100 @@ color: black !important;
   scrollbar-width: none;
 }
 
+/* Book Club Section */
+
+.ce-message-bubble {
+  background-color: #6DA4B0 !important;
+}
+
+.ce-primary-button {
+  background-color: #C7906B !important;
+  height: 40px !important;
+
+
+}
+
+.anticon-menu,
+.anticon-setting,
+.anticon-close {
+  color: #6DA4B0 !important;
+  background-color: #d6d6d6;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.ce-active-chat-card {
+  background-color: #ebebeb !important;
+}
+
+.ce-chat-form-container {
+
+  background-color: #6DA4B0 !important;
+  margin-left: 0 !important;
+  text-align: center;
+  color: #373c40;
+}
+
+.ce-settings {
+  color: #373c40;
+}
+
+.ce-chat-title {
+  -webkit-box-shadow: 0px 21px 26px -29px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 21px 26px -29px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 21px 26px -29px rgba(0, 0, 0, 0.75);
+}
+
+.ce-chat-title-text,
+.ce-chat-subtitle-text {
+  color: #C7906B;
+}
+
+.ce-chat-list-mobile-option,
+.ce-chat-settings-mobile-option {
+  color: #373c40 !important;
+}
+
+.ce-chat-settings-mobile-option>div>div>div {
+  color: #373c40 !important;
+}
+
+#ce-send-message-button {
+  color: #6DA4B0 !important;
+  background-color: #6DA4B0 !important;
+}
+
+.ce-settings {
+  background-color: #d6d6d6 !important;
+}
+
+.ce-chats-container {
+  background-color: #d6d6d6 !important;
+}
+
+.ce-chat-settings-container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+}
+
+.ce-person-title-container {
+  margin-top: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#ce-options-drop-down {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+/* THIS GETS RID OF THE SCROLL BARS */
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
