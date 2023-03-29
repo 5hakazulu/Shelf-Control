@@ -3,16 +3,36 @@ import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
-export const AuthContexProvider = ({ children }) => {
+export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || null
+    null
+    // JSON.parse(localStorage.getItem("user")) || null
   );
 
 
   
-  const login = async (inputs) => {
-    const res = await axios.post("/api/auth/login", inputs);
-    setCurrentUser(res.data);
+  
+  const login = async (credentials) => {
+    try {
+      console.log("Hello")
+      const response = await axios.post('/api/auth/login', credentials);
+  
+      if (response.status === 200) {
+        console.log(response)
+        const token = response.data.token;
+        const user = credentials.email;
+        if (token) {
+          localStorage.setItem("token", token);
+          setCurrentUser(user); 
+        } else {
+          console.log("No token received");
+        }
+      } else {
+       
+      }
+    } catch (error) {
+     
+    }
   };
 
   const logout = async (inputs) => {

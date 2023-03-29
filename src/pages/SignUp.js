@@ -1,7 +1,9 @@
-// import "./SignUp.css";
+
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
+import axios from 'axios';
+import { AuthContext } from "../context/authContext";
+import { useContext } from "react";
 
 
 const SignUp = () => {
@@ -14,7 +16,7 @@ const SignUp = () => {
 
   const [err, setError] = useState(null);
   const history = useHistory();
-
+  const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -23,13 +25,15 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/auth/sign-up", inputs);
-      console.log(res);
-      history.push("/");
+      const response = await axios.post("http://localhost:8800/api/auth/sign-up", inputs);
+      const { token } = response.data;
+      login(token);
+      history.push("/home");
     } catch (err) {
       setError(err.response.data);
     }
   };
+  
 
 
   return (

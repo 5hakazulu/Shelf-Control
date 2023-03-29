@@ -1,22 +1,35 @@
-import { useState, useEffect } from "react";
-import Moment from "react-moment";
+import { useState, useEffect, useContext } from "react";
+import moment from "react-moment";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
-import { getSavedBooks } from "../api/api"; 
+import { getSavedBooks, addBookToUnread, getUserId } from "../api/api";
+
 
 const SavedBooks = () => {
+  const [userId, setUserId] = useState(null);
+  const [unreadBooks, setUnreadBooks] = useState([]);
+  const [readBooks, setReadBooks] = useState([]);
+  const [book, setBook] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
   const [books, setBooks] = useState([]);
-  const userId = 1; 
-  const moment = require("moment");
+
+  const fetchSavedBooks = async () => {
+    if (!userId) return;
+
+    try {
+      const { unreadBooks, readBooks } = await getSavedBooks(userId);
+      setUnreadBooks(unreadBooks);
+      setReadBooks(readBooks);
+    } catch (error) {
+      console.error('Error fetching saved books:', error);
+    }
+  };
+
+
 
   useEffect(() => {
-    const fetchSavedBooks = async () => {
-      const { unreadBooks, readBooks } = await getSavedBooks(userId);
-      setBooks([...unreadBooks, ...readBooks]);
-    };
-
     fetchSavedBooks();
   }, [userId]);
 
@@ -35,6 +48,28 @@ const SavedBooks = () => {
     </div>
   );
 
+  const handleClick = (book) => {
+    setBook(book);
+  };
+
+  const handleAddBook = async () => {
+    const token = localStorage.getItem('token');
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    const url = `/api/books/${currentUser._id}/unread`;
+    const response = await fetch(url, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(book),
+    });
+    const data = await response.json();
+    setBooks(data);
+    setBook(null);
+  };
+
+
+
   return (
     <div id="saved-books-container">
       <Tab.Container id="left-tabs-example" defaultActiveKey="unread">
@@ -51,12 +86,19 @@ const SavedBooks = () => {
           </Col>
           <Col sm={10}>
             <Tab.Content>
-              <Tab.Pane eventKey="unread" id="unread">
-                <div id="saved-books">{books.filter((book) => !book.is_read).map(renderBook)}</div>
-              </Tab.Pane>
-              <Tab.Pane eventKey="read" id="read">
-                <div id="saved-books">{books.filter((book) => book.is_read).map(renderBook)}</div>
-              </Tab.Pane>
+            <Tab.Pane eventKey="unread" id="unread">
+  <div id="saved-books">
+    {unreadBooks.map((book) => renderBook(book))}
+    {book && (
+      <button onClick={() => handleAddBook(book)}>Add Book</button>
+    )}
+  </div>
+</Tab.Pane>
+<Tab.Pane eventKey="read" id="read">
+  <div id="saved-books">
+    {readBooks.map((book) => renderBook(book))}
+  </div>
+</Tab.Pane>
             </Tab.Content>
           </Col>
         </Row>
