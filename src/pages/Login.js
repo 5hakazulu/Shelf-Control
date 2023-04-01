@@ -14,7 +14,7 @@ const Login = () => {
   });
   const [err, setError] = useState(null);
   const history = useHistory();
-  const { login } = useContext(AuthContext);
+  const { login, fetchUserId } = useContext(AuthContext);
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -29,6 +29,7 @@ const Login = () => {
       // console.log(e)
       // console.log(response)
       await login({email:e.target.email.value, password:e.target.password.value})
+      await fetchUserId();
       // const { token } = response.data;
       // login(token);
       history.push("/home");

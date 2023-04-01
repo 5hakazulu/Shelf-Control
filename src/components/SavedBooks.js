@@ -4,42 +4,39 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
+import { AuthContext } from "../context/authContext";
 import { getSavedBooks, addBookToUnread, getUserId } from "../api/api";
 
-
 const SavedBooks = () => {
-  const [userId, setUserId] = useState(null);
-  const [unreadBooks, setUnreadBooks] = useState([]);
-  const [readBooks, setReadBooks] = useState([]);
+  const { currentUser, currentUserId } = useContext(AuthContext);
+  const [unreadBooks, setUnreadBooks] = useState(null);
+  const [readBooks, setReadBooks] = useState(null);
   const [book, setBook] = useState(null);
-  const [currentUser, setCurrentUser] = useState(null);
   const [books, setBooks] = useState([]);
 
   const fetchSavedBooks = async () => {
-    if (!userId) return;
+    if (!currentUserId) return;
 
     try {
-      const { unreadBooks, readBooks } = await getSavedBooks(userId);
-      setUnreadBooks(unreadBooks);
-      setReadBooks(readBooks);
+      const { unreadBooks, readBooks } = await getSavedBooks(currentUserId);
+      
+
+      setUnreadBooks(unreadBooks)
+      setReadBooks(readBooks)
     } catch (error) {
-      console.error('Error fetching saved books:', error);
+      console.error("Error fetching saved books:", error);
     }
   };
 
-
-
   useEffect(() => {
     fetchSavedBooks();
-  }, [userId]);
+  }, [currentUser, currentUserId]);
 
   const renderBook = (book) => (
     <div key={book.id} className="saved-book">
       <img src={book.cover_photo} alt={book.title} />
       <h1>{book.title}</h1>
       <h2>{book.author}</h2>
-      <p>{moment(book.date_published).format("YYYY")}</p>
-      <p>Avg. rating: {book.rating}</p>
       {book.link_to_buy && (
         <a target="_blank" rel="noopener noreferrer" href={book.link_to_buy}>
           Buy
@@ -53,13 +50,13 @@ const SavedBooks = () => {
   };
 
   const handleAddBook = async () => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     const headers = {
       Authorization: `Bearer ${token}`,
     };
     const url = `/api/books/${currentUser._id}/unread`;
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers,
       body: JSON.stringify(book),
     });
@@ -67,8 +64,6 @@ const SavedBooks = () => {
     setBooks(data);
     setBook(null);
   };
-
-
 
   return (
     <div id="saved-books-container">
@@ -86,19 +81,21 @@ const SavedBooks = () => {
           </Col>
           <Col sm={10}>
             <Tab.Content>
-            <Tab.Pane eventKey="unread" id="unread">
-  <div id="saved-books">
-    {unreadBooks.map((book) => renderBook(book))}
-    {book && (
-      <button onClick={() => handleAddBook(book)}>Add Book</button>
-    )}
-  </div>
-</Tab.Pane>
-<Tab.Pane eventKey="read" id="read">
-  <div id="saved-books">
-    {readBooks.map((book) => renderBook(book))}
-  </div>
-</Tab.Pane>
+              <Tab.Pane eventKey="unread" id="unread">
+                <div id="saved-books">
+                  {unreadBooks?.map((book) => renderBook(book))}
+                  {book && (
+                    <button onClick={() => handleAddBook(book)}>
+                      Add Book
+                    </button>
+                  )}
+                </div>
+              </Tab.Pane>
+              <Tab.Pane eventKey="read" id="read">
+                <div id="saved-books">
+                  {readBooks?.map((book) => renderBook(book))}
+                </div>
+              </Tab.Pane>
             </Tab.Content>
           </Col>
         </Row>
