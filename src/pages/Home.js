@@ -12,16 +12,16 @@ import SavedBooks from "../components/SavedBooks";
 
 const Home = () => {
   const searchString = useSelector((state) => state.keyword.searchString);
-  const { userId } = useContext(AuthContext);
+  const { currentUserId } = useContext(AuthContext);
 
   return (
     <>
       <SControlNavbar />
       <div className="homeBody">
         {searchString ? (
-          <BookSearch userId={userId} />
+          <BookSearch userId={currentUserId} />
         ) : (
-          <SavedBooks userId={userId} />
+          <SavedBooks userId={currentUserId} />
         )}
       </div>
       <Footer />
