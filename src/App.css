@@ -196,9 +196,14 @@ a {
 #saved-books-container .col-sm-2 {
   background-color: #EBEBEB;
   padding: 50px 10px 0 20px;
-  height: 100vh;
-  position: fixed;
+  height: 50vh;
+  top: 50px;
+  box-shadow: 15px 12px 2px 1px #6DA4B0;
+ 
+  position: sticky;
+
 }
+
 
 #saved-books {
   display: flex;

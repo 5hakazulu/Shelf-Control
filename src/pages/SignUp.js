@@ -39,12 +39,12 @@ const SignUp = () => {
     try {
 
 
-      const chat = await axios.post('https://api.chatengine.io/users/', data, { headers });
-      console.log(chat);
-      const response = await axios.post("http://localhost:8800/api/auth/sign-up", inputs);
+      // const chat = await axios.post('https://api.chatengine.io/users/', data, { headers });
+      // console.log(chat);
+      const response = await axios.post("/api/auth/sign-up", inputs);
       const { token } = response.data;
       login(token);
-      history.push("/home");
+      history.push("/");
 
     } catch (err) {
       setError(err.response.data);

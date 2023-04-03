@@ -9,7 +9,7 @@ const BookSearch = ({ userId }) => {
   const [books, setBooks] = useState([]);
   const searchString = useSelector((state) => state.keyword.searchString);
 
-  // get books from search string
+
   const getBook = async () => {
     if (searchString) {
       await fetch(
@@ -45,7 +45,7 @@ const BookSearch = ({ userId }) => {
       return;
     }
 
-    // save info to the unread database
+   
     await fetch(`/api/books/${userId}/unread`, {
       method: "POST",
       headers: {
